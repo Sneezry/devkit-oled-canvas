@@ -164,17 +164,6 @@ Screen.prototype.print = function(line, str, wrap) {
     }
 }
 
-Screen.prototype.printChar = function(x, y, char) {
-    var charArray = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
-    index = charArray.indexOf(char);
-    if (index === -1) {
-        index = 31;
-    }
-
-    var pixel = this.font[index];
-    this.draw(x * 8, y * 2, x * 8 + 8, y * 2 + 2, pixel);
-}
-
 Screen.prototype.clear = function() {
     this.context.clearRect(0, 0, 128 * this.scale, 64 * this.scale);
 }
