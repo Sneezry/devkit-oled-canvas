@@ -147,13 +147,13 @@ Screen.prototype.print = function(line, str, wrap) {
         line = 0;
     }
 
-    this.context.clearRect(0, line * 8 * this.scale, 128 * this.scale, (line + 1) * 8 * this.scale);
+    this.context.clearRect(0, line * 16 * this.scale, 128 * this.scale, (line + 1) * 16 * this.scale);
 
     var c = 0;
     for (var i = 0; i < str.length; i++) {
         if (str[i] === '\n' || c >= 16 && wrap) {
             line++;
-            this.context.clearRect(0, line * 8 * this.scale, 128 * this.scale, (line + 1) * 8 * this.scale);
+            this.context.clearRect(0, line * 16 * this.scale, 128 * this.scale, (line + 1) * 16 * this.scale);
             c = 0;
             i--;
         } else {
