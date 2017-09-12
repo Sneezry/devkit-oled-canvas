@@ -155,7 +155,9 @@ Screen.prototype.print = function(line, str, wrap) {
             line++;
             this.context.clearRect(0, line * 16 * this.scale, 128 * this.scale, (line + 1) * 16 * this.scale);
             c = 0;
-            i--;
+            if (c >= 16) {
+                i--;
+            }
         } else {
             if (c >= 16 || line >= 4) {
                 continue;
